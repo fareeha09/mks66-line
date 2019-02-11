@@ -76,7 +76,5 @@ draw_line(466, 417, 464, 419, screen, color1)
 display(screen)
 save_extension(screen, 'img.png')
 
-#make triangles
-#for i in range(5):
 
 
