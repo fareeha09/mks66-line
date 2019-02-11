@@ -9,7 +9,7 @@ RED = 0
 GREEN = 1
 BLUE = 2
 
-DEFAULT_COLOR = [102, 210, 255 ]
+DEFAULT_COLOR = [204, 239, 255 ]
 
 def new_screen( width = XRES, height = YRES ):
     screen = []
@@ -54,6 +54,6 @@ def save_extension( screen, fname ):
 def display( screen ):
     ppm_name = 'pic.ppm'
     save_ppm( screen, ppm_name )
-    #p = Popen( ['display', ppm_name], stdin=PIPE, stdout = PIPE )
-    #p.communicate()
+    p = Popen( ['display', ppm_name], stdin=PIPE, stdout = PIPE )
+    p.communicate()
     remove(ppm_name)

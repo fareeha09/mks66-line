@@ -22,17 +22,17 @@ def draw_line( x0, y0, x1, y1, screen, color ):
 				plot(screen, color, x0+i, y0)
 				
 		#octant 1-- also octant 5 kind of
-		elif ((dy > 0) and (dx > dy)):
-			octant1( x0, y0, x1, y1, dx, (-1 * dy), screen, color )
+		elif (dx >= dy > 0):
+			octant1( x0, y0, x1, y1, dy, (-1 * dx), screen, color )
 		#octant 2-- also octant 6 kind of
-		elif ((dy > 0) and (dx < dy)): 
-			octant2( x0, y0, x1, y1, dx, (-1 * dy), screen, color )
-		#octant 7-- also octant 3 kind of
-		elif ((dy < 0) and (dx > abs(dy))):
-			octant7( x0, y0, x1, y1, dx, (-1 * dy), screen, color )
+		elif (0 < dx < dy): 
+			octant2( x0, y0, x1, y1, dy, (-1 * dx), screen, color )
+		#octant 7 and 3 
+		elif ((dy < 0) and (dx <= abs(dy))):
+			octant7( x0, y0, x1, y1, dy, (-1 * dx), screen, color )
 		#octant 8-- also octant 4 kind of
-		elif((dy < 0) and (dx < abs(dy))):
-			octant8( x0, y0, x1, y1, dx, (-1 * dy), screen, color )
+		elif((dy < 0) and (dx > abs(dy))):
+			octant8( x0, y0, x1, y1, dy, (-1 * dx), screen, color )
     
 def octant1( x0, y0, x1, y1, A, B, screen, color ):
 	x=x0
